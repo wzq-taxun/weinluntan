@@ -1,0 +1,46 @@
+<view class="matainall">
+  <view class="namecla">
+    <van-image round width="2rem" height="2rem" src="{{topic.user.avatarUrl}}" />
+    <view class="rigson">
+      <text>{{topic.user.nickName}}</text>
+      <text style="font-size:20rpx; color: #ccc">{{topic.date}}</text>
+    </view>
+  </view>
+  <view style="margin-top:20rpx">
+    {{topic.content}}
+  </view>
+  <view class="imgs">
+    <block wx:for="{{topic.images}}" wx:key="index" wx:for-item="itemson">
+      <!--图片描述-->
+      <van-image bindtap="imgYu" data-list="{{topic.images}}" data-src="{{itemson}}" width="100%" height="30rem"
+        src="{{itemson}}" lazy-load show-menu-by-longpress fit="contain" />
+    </block>
+  </view>
+  <van-divider contentPosition="center" customStyle="color: #ccc; border-color: #ccc; font-size: 22rpx;">
+    没有更多了,分享一下吧</van-divider>
+  <view class="anniu">
+    <van-button type="primary" size="small" open-type="share" icon="share">分享好友</van-button>
+    <van-button type="primary" size="small" open-type="share" icon="photo">分享海报</van-button>
+  </view>
+</view>
+<view class="lastfooter">
+  <view><text>评论{{num}}</text> <text> 赞 12</text></view>
+  <block wx:for="{{replays}}" wx:key="_id">
+    <view class="namecla">
+      <van-image round width="2rem" height="2rem" src="{{item.user.avatarUrl}}" />
+      <view class="rigson">
+        <text>{{item.user.nickName}}</text>
+        <text style="font-size:25rpx; color: #333333">{{item.content}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="liuyan">
+  <van-cell-group>
+    <van-field value="{{ message }}" label="留言" type="textarea" placeholder="请输入留言" autosize border="{{ false }}"
+      bind:change="valchange" use-button-slot>
+      <van-button slot="button" size="small" type="primary" disabled="{{message ? false : true}}" bind:click="tijaio">提交
+      </van-button>
+    </van-field>
+  </van-cell-group>
+</view>

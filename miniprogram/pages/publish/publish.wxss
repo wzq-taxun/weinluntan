@@ -1,0 +1,20 @@
+page {
+  padding: 0;
+}
+
+page .textzi {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #fff;
+  width: 100%;
+}
+
+page .imgall {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #fff;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+}

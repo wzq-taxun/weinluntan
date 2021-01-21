@@ -1,2 +1,30 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<view class="mytou">
+  <van-image round width="3rem" height="3rem" src="{{avatarUrl}}" wx:if="{{avatarUrl}}" />
+  <view style="margin-left:20rpx" wx:if="{{userInfo}}">
+    <view><text>{{userInfo.nickName}}</text></view>
+    <!-- <view style="font-size:24rpx; color: #ccc;">绑定手机号</view> -->
+    <!-- <button style="font-size:24rpx; color: #ccc; background-color: #fff;border:none; outline: none;"
+      open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定手机号</button> -->
+  </view>
+  <view wx:if="{{!avatarUrl}}">
+    <button class="user_img" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo">登录</button>
+  </view>
+</view>
+<view class="cellall">
+  <van-cell title="我的贴子" icon="shop-o" is-link>
+    <van-icon slot="right-icon" name="search" class="custom-icon" />
+  </van-cell>
+  <van-cell title="我的收藏" icon="shop-o" is-link>
+    <van-icon slot="right-icon" name="search" class="custom-icon" />
+  </van-cell>
+  <!-- <van-cell value="" icon="shop-o" is-link>
+    <van-icon slot="right-icon" name="search" class="custom-icon" />
+  </van-cell> -->
+  <van-cell title="联系管理员" icon="shop-o" is-link>
+    <van-icon slot="right-icon" name="search" class="custom-icon" />
+  </van-cell>
+</view>
+<view style="width:97%; margin: 30rpx auto;">
+  <van-button type="primary" block open-type="share">邀请朋友一起</van-button>
+</view>

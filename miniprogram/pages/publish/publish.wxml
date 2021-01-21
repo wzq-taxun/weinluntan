@@ -1,0 +1,13 @@
+<view class="textzi">
+  <van-field focus clearable value="{{ textareall }}" type="textarea" placeholder="写一写" autosize border="{{ false }}"
+    bind:blur="getvalues" />
+</view>
+
+<view class="imgall">
+  <view>上传图片</view>
+  <van-uploader file-list="{{ fileList }}" max-count="8" deletable="{{ true }}" bind:after-read="afterRead"
+    bind:delete="deletepic" />
+</view>
+<view style="width:97%; margin: 30rpx auto;">
+  <van-button type="primary" block bind:click="publishall">发布</van-button>
+</view>

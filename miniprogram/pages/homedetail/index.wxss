@@ -1,0 +1,61 @@
+page {
+  padding: 0;
+}
+
+page .matainall {
+  width: 97%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #fff;
+  margin: 10rpx auto;
+  border-radius: 20rpx;
+}
+
+page .matainall .namecla,
+page .lastfooter .namecla {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 30rpx auto;
+}
+
+page .matainall .imgs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  margin-top: 20rpx;
+}
+page .matainall .namecla .rigson,
+page .lastfooter .namecla .rigson {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-left: 20rpx;
+  font-size: 24rpx;
+}
+
+page .matainall .anniu {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20rpx auto;
+}
+
+page .lastfooter {
+  width: 97%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #fff;
+  margin: 10rpx auto;
+  padding-bottom: 100rpx;
+}
+
+page .liuyan {
+  position: fixed;
+  bottom: 0rpx;
+  width: 97%;
+}

@@ -1,5 +1,45 @@
 <view class="headermain">
-  <van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" image-class="daxiao" />
+  <van-image width="70" height="70" src="https://img.yzcdn.cn/vant/cat.jpeg" image-class="daxiao" />
   <view style="color: #fff; font-weight:700;">小王沟社区</view>
 </view>
-<van-notice-bar left-icon="volume-o" text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。" />
+<van-notice-bar left-icon="volume-o" text="欢迎来到小王沟社区，点我, 点我, 点我。了解更多" scrollable background="#fff" color="red"
+  bind:click="goarticle" />
+<view class="articlehe">
+  <view>
+    <van-tag custom-class="syright" type="danger">顶</van-tag>小王沟社区管理公众号,获取最新社区动态
+  </view>
+  <view>
+    <van-tag custom-class="syright" type="danger">顶</van-tag>维护社区良好风气, 禁止发布违规 、无意义信息
+  </view>
+</view>
+<block wx:for="{{topics}}" wx:key="_id">
+  <view class="matainall" data-id="{{item._id}}" bindtap='jumpDetails'>
+    <view class="namecla">
+      <van-image round width="2rem" height="2rem" src="{{item.user.avatarUrl}}" />
+      <view class="rigson">
+        <text>{{item.user.nickName}}</text>
+        <text style="font-size:20rpx; color: #ccc">{{item.date}}</text>
+      </view>
+    </view>
+    <view style="margin-top:20rpx">
+      {{item.content}}
+    </view>
+    <view class="imgs">
+      <block wx:for="{{item.images}}" wx:key="index" wx:for-item="itemson">
+        <!--图片描述-->
+        <!-- <image bindtap="imgYu" data-list="{{item.images}}" data-src="{{itemson}}" src="{{itemson}}"></image> -->
+        <van-image bindtap="imgYu" data-list="{{item.images}}" data-src="{{itemson}}" custom-class="rightl"
+          width="10rem" height="10rem" src="{{itemson}}" lazy-load show-menu-by-longpress fit="cover" />
+      </block>
+    </view>
+    <view class="icontu">
+      <view>
+        <text style="font-size:20rpx; color: #ccc">{{item.date}}</text>
+      </view>
+      <view>
+        <van-icon name="chat" color="#A0A0A0" info="{{item && item.num}}" />
+        <van-icon name="good-job" custom-class="icoson" color="#A0A0A0" />
+      </view>
+    </view>
+  </view>
+</block>
