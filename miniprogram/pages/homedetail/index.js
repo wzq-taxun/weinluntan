@@ -114,6 +114,44 @@ Page({
         fail: console.error
       })
   },
+  // 绑定的点击事件函数
+  onViewTap: function () {
+    this.createQrCode(); // 调用生成小程序码
+  },
+
+  // 生成小程序码
+  createQrCode: function () {
+    this.showLoading();
+    wx.cloud
+      .callFunction({
+        // 请求云函数
+        // 云函数getQrCode
+        name: 'getQrCode',
+      })
+      .then((res) => {
+        console.log(res);
+        const fileId = res.result;
+        wx.previewImage({
+          // 小程序码,生成后直接预览,前台展示
+          urls: [fileId],
+          current: fileId,
+        });
+        this.hideLoading();
+      });
+  },
+
+  // toast生成中
+  showLoading: function () {
+    wx.showLoading({
+      title: '正在生成中...',
+      icon: 'none',
+    });
+  },
+
+  hideLoading: function () {
+    wx.hideLoading();
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

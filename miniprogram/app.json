@@ -21,7 +21,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "心情历程",
+    "navigationBarTitleText": "社区论坛",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -32,13 +32,13 @@
         "pagePath": "pages/home/home",
         "iconPath": "/images/V2.0心理咨询.png",
         "selectedIconPath": "/images/V2.0心理咨询.png",
-        "text": "心情"
+        "text": "社圈"
       },
       {
         "pagePath": "pages/publish/publish",
         "iconPath": "/images/发布点击状态-24.png",
         "selectedIconPath": "/images/发布点击状态-24.png",
-        "text": "发布"
+        "text": "发帖"
       },
       {
         "pagePath": "pages/about/about",
@@ -48,5 +48,8 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx9d12fce1b381364b"
+  ]
 }

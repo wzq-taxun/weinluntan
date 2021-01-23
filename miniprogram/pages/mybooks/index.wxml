@@ -1,17 +1,3 @@
-<view class="headermain">
-  <van-image width="70" height="70" src="https://img.yzcdn.cn/vant/cat.jpeg" image-class="daxiao" />
-  <view style="color: #fff; font-weight:700;">小王沟社区</view>
-</view>
-<van-notice-bar left-icon="volume-o" text="欢迎来到小王沟社区，点我, 点我, 点我。了解更多" scrollable background="#fff" color="red"
-  bind:click="goarticle" />
-<view class="articlehe">
-  <view data-id="28ee4e3e600bc40300a25b68057426c4" bindtap='jumpDetails'>
-    <van-tag custom-class="syright" type="danger">顶</van-tag>小王沟社区管理公众号,获取最新社区动态
-  </view>
-  <view data-id="28ee4e3e600bc57100a27bfe561f204d" bindtap='jumpDetails'>
-    <van-tag custom-class="syright" type="danger">顶</van-tag>维护社区良好风气, 禁止发布违规 、无意义信息
-  </view>
-</view>
 <block wx:for="{{topics}}" wx:key="_id">
   <view class="matainall" data-id="{{item._id}}" bindtap='jumpDetails'>
     <view class="namecla">

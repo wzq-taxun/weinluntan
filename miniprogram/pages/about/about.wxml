@@ -12,18 +12,21 @@
   </view>
 </view>
 <view class="cellall">
-  <van-cell title="我的贴子" icon="shop-o" is-link>
+  <van-cell title="我的贴子" icon="shop-o" is-link bindtap="gomybook">
     <van-icon slot="right-icon" name="search" class="custom-icon" />
   </van-cell>
   <van-cell title="我的收藏" icon="shop-o" is-link>
     <van-icon slot="right-icon" name="search" class="custom-icon" />
   </van-cell>
-  <!-- <van-cell value="" icon="shop-o" is-link>
-    <van-icon slot="right-icon" name="search" class="custom-icon" />
-  </van-cell> -->
-  <van-cell title="联系管理员" icon="shop-o" is-link>
+  <van-cell title="品质柜台" icon="shop-o" is-link bindtap="goComm1">
     <van-icon slot="right-icon" name="search" class="custom-icon" />
   </van-cell>
+  <van-cell title="小程序码" icon="shop-o" is-link bindtap="onViewTap">
+    <van-icon slot="right-icon" name="search" class="custom-icon" />
+  </van-cell>
+</view>
+<view style="width:97%; margin: 30rpx auto;">
+  <van-button type="primary" block open-type="contact">联系管理员</van-button>
 </view>
 <view style="width:97%; margin: 30rpx auto;">
   <van-button type="primary" block open-type="share">邀请朋友一起</van-button>

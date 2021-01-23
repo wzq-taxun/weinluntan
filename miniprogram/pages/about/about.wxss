@@ -26,3 +26,23 @@ page .cellall {
   background-color: #fff;
   margin-top: 10rpx;
 }
+
+.loginbtn1 {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  color: #CDB03B;
+  font-size: 25rpx;
+  background: transparent;
+  /*设置背景颜色一致*/
+  border-color: transparent;
+  /*设置边框颜色一致*/
+  /* background-color: rgba(255,255,255,0); */
+}
+
+.loginbtn1::after {
+  border: none;
+  /*设置边框取消*/
+}

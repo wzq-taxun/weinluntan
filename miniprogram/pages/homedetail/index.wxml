@@ -16,11 +16,11 @@
         src="{{itemson}}" lazy-load show-menu-by-longpress fit="contain" />
     </block>
   </view>
-  <van-divider contentPosition="center" customStyle="color: #ccc; border-color: #ccc; font-size: 22rpx;">
+  <van-divider contentPosition="center" customStyle="color: #ccc; border-color: #ccc; font-size: 28rpx;">
     没有更多了,分享一下吧</van-divider>
   <view class="anniu">
     <van-button type="primary" size="small" open-type="share" icon="share">分享好友</van-button>
-    <van-button type="primary" size="small" open-type="share" icon="photo">分享海报</van-button>
+    <van-button type="primary" size="small" icon="photo" bindtap="onViewTap">分享二维码</van-button>
   </view>
 </view>
 <view class="lastfooter">

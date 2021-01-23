@@ -45,6 +45,7 @@ Page({
         console.log(res)
         console.log('[云函数] [login] user openid: ', res.result.openid)
         app.globalData.openid = res.result.openid
+        wx.setStorageSync('openid', res.result.openid)
         // app.globalData.name = e.detail.userInfo.nickName
         // app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
         //这里执行数据存储到数据库的操作
@@ -60,19 +61,62 @@ Page({
       }
     })
   },
-  // // 获取手机号
-  // getPhoneNumber(e) {
-  //   console.log(JSON.stringify(e));
-  //   wx.cloud.callFunction({
-  //     name: 'login',
-  //     data: {
-  //       action: 'getcellphone',
-  //       id: e.detail.cloudID
-  //     }
-  //   }).then(res => {
-  //     console.log('res: ', res)
-  //   })
-  // },
+  // 绑定的点击事件函数
+  onViewTap: function () {
+    this.createQrCode(); // 调用生成小程序码
+  },
+
+  // 生成小程序码
+  createQrCode: function () {
+    this.showLoading();
+    wx.cloud
+      .callFunction({
+        // 请求云函数
+        // 云函数getQrCode
+        name: 'getQrCode',
+      })
+      .then((res) => {
+        console.log(res);
+        const fileId = res.result;
+        wx.previewImage({
+          // 小程序码,生成后直接预览,前台展示
+          urls: [fileId],
+          current: fileId,
+        });
+        this.hideLoading();
+      });
+  },
+  // toast生成中
+  showLoading: function () {
+    wx.showLoading({
+      title: '正在生成中...',
+      icon: 'none',
+    });
+  },
+
+  hideLoading: function () {
+    wx.hideLoading();
+  },
+  // 跳转到其他小程序
+  goComm1: function () {
+    wx.navigateToMiniProgram({
+      appId: 'wx9d12fce1b381364b',  //appid
+      path: '',//path （为空时默认首页）
+      extraData: {  //参数
+        foo: 'bar'
+      },
+      envVersion: 'release', //开发版  (develop 开发版  trial 体验版   release 正式版 )
+      success(res) {
+        console.log('成功')
+      }
+    })
+  },
+  // 跳转到我的帖子
+  gomybook: function () {
+    wx.navigateTo({
+      url: '../mybooks/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
